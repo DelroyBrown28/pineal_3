@@ -1,6 +1,25 @@
 $(document).ready(function () {
 
-    function onloadFadeIn() {
+    function randomValues() {
+        anime({
+            targets: '.options_title',
+            translateX: function () {
+                return anime.random(0, 100, 0);
+            },
+            direction: 'alternate',
+            loop: true,
+            easing: 'spring(1, 80, 10, 0)',
+            duration: 750,
+            complete: randomValues
+        });
+    }
+
+    $('.art_vault').hover(randomValues, function() {
+        $('body').addClass('bgcolorchange');
+    });
+
+
+    window.onload = function onloadFadeIn() {
         $('.art_vault').animate({
             opacity: '1'
         }, 250, function () {
@@ -25,7 +44,6 @@ $(document).ready(function () {
             })
         })
     }
-    window.onload = onloadFadeIn;
 
 
     $('.art_vault').hover(function () {

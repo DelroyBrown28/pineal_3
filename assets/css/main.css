@@ -23,6 +23,11 @@ html {
     transition: 0.3s;
 }
 
+.bgcolorchange {
+    background-color: #999997;
+    transition: 1s;
+}
+
 
 
 
